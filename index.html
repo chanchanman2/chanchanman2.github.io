@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Personal academic website of Haotian Chen, focusing on hardware–software co-design, efficient AI acceleration, SoC architectures, and generative-model inference.">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<title>Haotian Chen</title>
+<link rel="canonical" href="https://chanchanman2.github.io/">
+<link rel="icon" type="image/png" sizes="128x128" href="assets/img/wu-favicon-v114-c7eef8e228a0.png">
+<link rel="shortcut icon" type="image/png" href="assets/img/wu-favicon-v114-c7eef8e228a0.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/wu-touch-v114-b43b4b77e986.png">
+<link rel="preload" as="image" href="assets/img/profile-haotian-v114e-fbd4a86b9e39.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/wu-seal-v114-b7e501ddfe99.png">
+<link rel="preload" as="image" href="assets/img/visitor-world-4b8476160652.png">
+<link rel="preconnect" href="https://mapmyvisitors.com">
+<link rel="preload" as="script" href="https://mapmyvisitors.com/map.js?cl=ebeae4&w=a&t=m&d=xd-ShG5saf1Kz-ycmXGMpyUblHZde0AnO9DflszvcWc&co=ffffff&ct=332e48&cmo=4b8fe0&cmn=e2612b">
+<script defer src="assets/js/jquery-1.12.4-668b046d12db.min.js"></script>
+<script defer src="assets/js/visitor-map-8edaa2735750.js"></script>
+<style>
+:root{--text:#171717;--line:#dedede;--link:#6f60b0;--soft:#fafafa}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:#fff;line-height:1.56}
+.wrap{width:min(980px,calc(100% - 34px));margin:0 auto}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:64px}
+.brand{font-size:18px;font-weight:600;white-space:nowrap}
+.topnav{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+.topnav a{color:var(--text);text-decoration:none;font-size:15px;font-weight:650;letter-spacing:.02em;padding:8px 7px}
+main{padding:28px 0 24px}
+.profile-hero{display:grid;grid-template-columns:205px minmax(0,1fr) 116px;gap:34px;align-items:start;margin:0 0 28px}
+.profile-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:4px}
+.profile-name{display:inline-block;margin:0 0 10px;padding:0 10px 10px 0;border-bottom:1px solid var(--line);font-size:40px;line-height:1.08;letter-spacing:-.025em}
+.cn-name{font-size:24px;font-weight:500}
+.profile-role,.profile-affiliation{font-size:18px;line-height:1.45}
+.profile-affiliation{margin-top:3px}
+.profile-affiliation a,.about a,.entry-sub a{color:var(--link);text-decoration:none}
+.profile-affiliation a:hover,.about a:hover,.entry-sub a:hover{text-decoration:underline}
+.profile-links{display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin-top:13px}
+.profile-links a{display:inline-flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;font-size:16.5px}
+.profile-links .label{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.profile-links svg{width:17px;height:17px;flex:none;color:var(--text);fill:currentColor}
+.profile-seal{display:flex;justify-content:flex-end;align-self:start}
+.profile-seal img{width:92px;height:92px;object-fit:contain;image-rendering:auto}
+h2{font-size:29px;line-height:1.15;margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line);letter-spacing:-.015em}
+.about{scroll-margin-top:82px}
+.about p{font-size:17px;line-height:1.58;margin:0 0 10px}
+.section{scroll-margin-top:82px;margin-top:28px}
+.subsection{font-size:18px;font-weight:600;margin:4px 0 8px}
+.subsection.space{margin-top:16px}
+.entry{padding-bottom:7px;margin-bottom:10px}
+.two-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:baseline}
+.two-row.second{margin-top:1px}
+.right{text-align:right;white-space:nowrap;font-size:16.5px;line-height:1.5;font-weight:400}
+.role,.edu-school{font-size:16.5px;line-height:1.5;font-weight:600}
+.topic,.entry-sub,.citation,.note,.award{font-size:16.5px;line-height:1.5;font-weight:400}
+.entry-sub{margin-top:2px}
+.citation{display:grid;grid-template-columns:32px minmax(0,1fr);gap:2px;margin-bottom:10px}
+.citation strong{font-weight:650}
+.publication{display:grid;grid-template-columns:minmax(0,30%) minmax(0,1fr);gap:26px;align-items:center;margin:18px 0 40px}
+.publication-figure{margin:0;min-width:0}
+.publication-figure img{display:block;width:100%;height:auto;max-height:240px;object-fit:contain}
+.publication .citation{margin-bottom:0}
+.publication-title{font-weight:600}
+.publication-info>div+div{margin-top:4px}
+.publication.no-figure .citation{grid-column:2}
+.visitor-map{margin:28px 0 8px;padding:0}
+.visitor-map-inner{width:min(700px,100%);margin:0 auto}
+#visitor-map{aspect-ratio:700/375;background:#ffffff url("assets/img/visitor-world-4b8476160652.png") center bottom/100% auto no-repeat}
+#visitor-map.is-ready{aspect-ratio:auto;background:none}
+#visitor-map .mapmyvisitors-map{background-image:url("assets/img/visitor-world-4b8476160652.png")!important;background-size:100% 100%}
+#visitor-map .mapmyvisitors-loading{display:none}
+#mapmyvisitors-widget{max-width:100%}
+#map-status{margin:8px 0 0;text-align:center;font-size:12px;color:#777}
+#map-status a{color:var(--link);text-decoration:none}
+footer{text-align:center;font-size:15px;padding:18px 0 24px}
+@media(max-width:800px){
+  .topbar{align-items:flex-start;flex-direction:column;padding:12px 0}
+  .topnav{justify-content:flex-start;gap:3px}
+  .topnav a{padding:5px 7px;font-size:14px}
+  .profile-hero{grid-template-columns:128px minmax(0,1fr);gap:18px}
+  .profile-seal{grid-column:1/-1;justify-content:flex-start}
+  .profile-seal img{width:68px;height:68px}
+  .profile-name{font-size:32px}
+  .cn-name{font-size:20px}
+  .two-row{grid-template-columns:1fr;gap:2px}
+  .right{text-align:left;white-space:normal}
+  .about,.section{scroll-margin-top:132px}
+}
+@media(max-width:600px){
+  .publication{grid-template-columns:minmax(0,1fr);gap:14px;margin:18px 0 40px}
+  .publication-figure{width:min(320px,100%);justify-self:center}
+  .publication.no-figure .citation{grid-column:auto}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap topbar">
+  <div class="brand">Haotian Chen</div>
+  <nav class="topnav" aria-label="Primary navigation">
+    <a href="#about">ABOUT</a>
+    <a href="#publications">PUBLICATIONS</a>
+    <a href="#experiences">EXPERIENCES</a>
+    <a href="#education">EDUCATION</a>
+    <a href="#honors">HONORS &amp; AWARDS</a>
+  </nav>
+</div>
+</header>
+
+<div class="wrap">
+<main>
+<section class="profile-hero">
+  <div class="profile-photo"><img src="assets/img/profile-haotian-v114e-fbd4a86b9e39.jpg" alt="Haotian Chen" width="480" height="600" loading="eager" fetchpriority="high"></div>
+  <div class="profile-summary">
+    <h1 class="profile-name">Haotian Chen <span class="cn-name">(陈皓天)</span></h1>
+    <div class="profile-role">Master’s Student</div>
+    <div class="profile-affiliation"><a href="https://en.whu.edu.cn/" target="_blank" rel="noopener">Wuhan University</a></div>
+    <div class="profile-links">
+      <a href="mailto:htchanx@gmail.com">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3V5Zm2 2v.4l7 5.25L19 7.4V7H5Zm14 10V9.9l-7 5.25L5 9.9V17h14Z"/></svg>
+        <span class="label">Email</span>
+      </a>
+      <a href="https://www.linkedin.com/in/haotianchan/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1.8"/><rect x="6.5" y="10" width="2.5" height="7.5" fill="white"/><circle cx="7.75" cy="7.2" r="1.25" fill="white"/><path d="M11.4 10h2.5v1.2c.7-.95 1.65-1.5 2.95-1.5 2.3 0 3.45 1.55 3.45 4.15v3.65h-2.6v-3.4c0-1.45-.35-2.25-1.55-2.25-1.4 0-2.1.95-2.1 2.6v3.05h-2.65V10z" fill="white"/></svg>
+        <span class="label">LinkedIn</span>
+      </a>
+    </div>
+  </div>
+  <div class="profile-seal"><img src="assets/img/wu-seal-v114-b7e501ddfe99.png" alt="Wuhan University seal" width="256" height="256" loading="eager"></div>
+</section>
+
+<section id="about" class="about">
+  <h2>About</h2>
+  <p>I am a final-year M.Eng. student in Microelectronics and Solid-State Electronics under the supervision of Prof. <a href="https://jszy.whu.edu.cn/changsheng/en/index.htm" target="_blank" rel="noopener">Sheng Chang</a> at <a href="https://en.whu.edu.cn/" target="_blank" rel="noopener">Wuhan University</a> (WHU), where I received my B.Sc. in Physics in 2024. I currently work as a research intern with <a href="https://cei.pratt.duke.edu/people/changchun-zhou" target="_blank" rel="noopener">Dr. Changchun Zhou</a> and am seeking Ph.D. opportunities for Fall 2027.</p>
+  <p>My research focuses on hardware–software co-design for efficient AI acceleration, with particular interests in SoC architectures, sparse and low-precision computing, and generative-model inference. My recent work explores efficient hardware for video diffusion Transformers, spanning semantic sparsity, FP8 and structured-sparse acceleration, FPGA/ASIC architectures, and model-to-chip design.</p>
+</section>
+
+
+
+
+
+
+
+<section id="publications" class="section">
+  <h2>Publications</h2>
+  <div class="subsection">Conference Paper</div>
+  <article class="publication" data-paper="sand">
+    <figure class="publication-figure">
+      <img src="assets/img/publication-sand-076341fc0ccc.png" alt="SAND banded stripe matrix and FP8 hardware pipeline" width="2535" height="1181" loading="lazy" decoding="async">
+    </figure>
+    <div class="citation"><div>[1]</div><div class="publication-info">
+      <div class="publication-title">SAND: A Sparse-Aware and Diagonal-Decoupled Algorithm-Hardware Co-Acceleration Framework for Floating-Point Video Generation Models</div>
+      <div class="publication-authors"><strong>Haotian Chen*</strong>, Qunkang Meng*, Zhan Li, Xingyu Shi, Jie Hu, Zhihan Zhang, Hongyu Wu, Zhiyi Chen, Hao Wang, and Sheng Chang†</div>
+      <div class="publication-venue">IEEE/ACM International Conference on Computer-Aided Design (<strong>ICCAD</strong>), San Jose, USA, Nov. 8–12, 2026.</div>
+    </div></div>
+  </article>
+  <div class="subsection space">Journal Papers</div>
+  <article class="publication" data-paper="semantic-sparsity">
+    <figure class="publication-figure">
+      <img src="assets/img/publication-tripact-b129a8089916.png" alt="Tripact chip layout and sparse attention data flow for dynamic semantic-sparsity acceleration" width="1359" height="596" loading="lazy" decoding="async">
+    </figure>
+    <div class="citation"><div>[1]</div><div class="publication-info">
+      <div class="publication-title">Dynamic Semantic-Sparsity Acceleration for Video Diffusion Transformers</div>
+      <div class="publication-authors"><strong>Haotian Chen</strong>, Changchun Zhou†, et al.</div>
+      <div class="publication-venue">(In preparation) IEEE Transactions on Circuits and Systems I: Regular Papers (<strong>TCAS-I</strong>).</div>
+    </div></div>
+  </article>
+  <article class="publication" data-paper="model-to-chip">
+    <figure class="publication-figure">
+      <img src="assets/img/publication-v2s-63aa258b9d5c.png" alt="V2S chip layout and annotated chip micrograph for automated model-to-chip design" width="724" height="323" loading="lazy" decoding="async">
+    </figure>
+    <div class="citation"><div>[2]</div><div class="publication-info">
+      <div class="publication-title">Automated Model-to-Chip Design for Floating-Point Video Diffusion Transformers</div>
+      <div class="publication-authors">Qunkang Meng*, <strong>Haotian Chen*</strong>, et al.</div>
+      <div class="publication-venue">(Submitted) IEEE Transactions on Circuits and Systems II: Express Briefs (<strong>TCAS-II</strong>).</div>
+    </div></div>
+  </article>
+  <article class="publication" data-paper="cdmc-rt">
+    <figure class="publication-figure">
+      <img src="assets/img/publication-cdmc-rt-466c8e6fe9bf.png" alt="CDMC-RT model training, automatic differentiation, hardware mapping and closed-loop verification framework" width="1383" height="1009" loading="lazy" decoding="async">
+    </figure>
+    <div class="citation"><div>[3]</div><div class="publication-info">
+      <div class="publication-title">CDMC-RT: Closed-Loop Dependency-Aware Model-to-Chip Co-Design for Reinforcement-Learning Training–Inference</div>
+      <div class="publication-authors">Qunkang Meng, Zhihan Zhang, <strong>Haotian Chen</strong>, et al.</div>
+      <div class="publication-venue">(In preparation) IEEE Transactions on Industrial Electronics (<strong>TIE</strong>).</div>
+    </div></div>
+  </article>
+  <div class="note">* Equal contribution. † Corresponding author.</div>
+</section>
+
+<section id="experiences" class="section">
+  <h2>Experiences</h2>
+  <div class="subsection">Research</div>
+  <div class="entry">
+    <div class="two-row"><div class="role">Graduate Research Intern</div><div class="right">Duke University (remote)</div></div>
+    <div class="two-row second"><div class="topic">Dynamic Semantic-Sparsity Acceleration for Video Diffusion Transformers</div><div class="right">Jun. 2026 – Present</div></div>
+    <div class="entry-sub">Supervised by <a href="https://cei.pratt.duke.edu/people/changchun-zhou" target="_blank" rel="noopener">Dr. Changchun Zhou</a></div>
+  </div>
+  <div class="entry">
+    <div class="two-row"><div class="role">Graduate Research Assistant</div><div class="right">Wuhan University, China</div></div>
+    <div class="two-row second"><div class="topic">Sparse FP8 Co-Acceleration for Video Diffusion Transformers</div><div class="right">Jun. 2025 – Apr. 2026</div></div>
+  </div>
+  <div class="entry">
+    <div class="two-row"><div class="role">Graduate Research Assistant</div><div class="right">Wuhan University, China</div></div>
+    <div class="two-row second"><div class="topic">Automated Model-to-Chip Acceleration for Video Diffusion Transformers</div><div class="right">Apr. 2025 – Present</div></div>
+  </div>
+  <div class="subsection space">Teaching</div>
+  <div class="entry">
+    <div class="two-row"><div class="role">Teaching Assistant</div><div class="right">Wuhan University, China</div></div>
+    <div class="two-row second"><div class="topic">Circuit Analysis, undergraduate course support and Q&amp;A</div><div class="right">Sep. 2024 – Jun. 2026</div></div>
+  </div>
+</section>
+
+<section id="education" class="section">
+  <h2>Education</h2>
+  <div class="entry">
+    <div class="two-row"><div class="edu-school">Wuhan University</div><div class="right">Wuhan, China</div></div>
+    <div class="two-row second"><div class="topic">M.Eng. in Microelectronics and Solid-State Electronics</div><div class="right">Sep. 2024 – Jun. 2027 (expected)</div></div>
+  </div>
+  <div class="entry">
+    <div class="two-row"><div class="edu-school">Wuhan University</div><div class="right">Wuhan, China</div></div>
+    <div class="two-row second"><div class="topic">B.Sc. in Physics</div><div class="right">Sep. 2020 – Jun. 2024</div></div>
+  </div>
+</section>
+
+<section id="honors" class="section">
+  <h2>Honors &amp; Awards</h2>
+  <div class="entry">• Academic Scholarship, Wuhan University — 2024, 2025, 2026</div>
+  <div class="entry">• Outstanding Academic Scholarship, Wuhan University — 2022</div>
+</section>
+
+<section class="visitor-map" aria-label="Visitor map">
+  <div class="visitor-map-inner" id="visitor-map" aria-busy="true">
+    <script id="mapmyvisitors" type="text/plain" data-src="https://mapmyvisitors.com/map.js?cl=ebeae4&w=a&t=m&d=xd-ShG5saf1Kz-ycmXGMpyUblHZde0AnO9DflszvcWc&co=ffffff&ct=332e48&cmo=4b8fe0&cmn=e2612b"></script>
+  </div>
+  <p id="map-status" role="status" hidden>Visitor statistics are temporarily unavailable. <a id="visitor-map-details" target="_blank" rel="noopener" hidden>View visitor details</a></p>
+</section>
+</main>
+<footer>© 2026 Haotian Chen</footer>
+</div>
+</body>
+</html>

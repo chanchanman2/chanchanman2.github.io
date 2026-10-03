@@ -1,0 +1,35 @@
+name: Retain two latest Pages deployments
+
+on:
+  workflow_run:
+    workflows:
+      - pages-build-deployment
+      - pages build and deployment
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  deployments: write
+  actions: write
+
+concurrency:
+  group: public-pages-history-retention
+  cancel-in-progress: false
+
+jobs:
+  retain:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout the trusted public main revision
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Retain the two latest Pages deployments and their builds
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/retain_deployments.py --expected-sha "$GITHUB_SHA"
